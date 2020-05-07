@@ -1,4 +1,4 @@
-@snap[midpoint]
+@snap[midpoint span-100]
 
 # Thinking About Data Structures
 
@@ -31,9 +31,11 @@ System to store and work with data in a computer's memory
 
 Data structures are the bones of our program
 
-Choosing a DS that matches the problem will make it **easy** to write clean, efficient code
+**Choosing** a DS that matches the problem will make it **easy** to write clean, efficient code
 
-You may need to customize a DS to your specific problem
+You may need to **customize** a DS to your specific problem
+
+Implementing a DS from scratch is rare
 
 ---
 
@@ -61,7 +63,7 @@ Three key categories of knowledge:
 <li>**Analysis**: how much does it cost?</li>
 </ul>
 
-Take them one at a time
+Study one structure at a time
 
 Start with a motivating problem
 

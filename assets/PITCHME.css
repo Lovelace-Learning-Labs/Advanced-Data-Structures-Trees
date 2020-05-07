@@ -39,13 +39,17 @@
   max-height: 100vh !important;
 }
 
-.reveal .slides table, .reveal .slides .wide {
+.reveal .slides table {
+  font-size: 0.8em;
+}
+
+.reveal .slides .wide {
   width: 85vw;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 
-  max-width: none;
+  max-width: 100vw;
   max-height: none;
 }
 
@@ -53,7 +57,7 @@
   color: #E61E5F;
 }
 
-.reveal .slides .midpoint h1 {
+.reveal .slides .midpoint h1, .reveal .slides .midpoint h2 {
   /* Skip the margin at the top of the page */
   margin-top: -4vh;
 }

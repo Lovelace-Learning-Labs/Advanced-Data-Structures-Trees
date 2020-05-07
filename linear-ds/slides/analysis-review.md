@@ -1,8 +1,6 @@
-@snap[midpoint]
+@snap[midpoint span-100]
 
-# Analysis
-
-### Review
+# Algorithmic Analysis
 
 @snapend
 
@@ -13,9 +11,9 @@
 By the end of this module, students will be able to...
 
 - **Define** the terms analysis, complexity, order, worst case
-- **Explain** how Big-O notation helps us compare algorithms
+- **Explain** how Big-O notation helps compare algorithms
 - **Recognize** the graph shapes of common complexity orders
-- **Recall** the time complexity of various built-in operations
+- **Recall** the time complexity of various basic operations
 - **Describe** how to compose operations to analyze the complexity of a function
 
 ---
@@ -110,11 +108,11 @@ Growth is always **in terms of** something
 
 Usually the number of **inputs** or **operations**
 
-We'll use letters (usually `\(n\)`, `\(m\)`, `\(k\)`, etc) to represent these numbers
+We'll use letters (`\(n\)`, `\(m\)`, `\(k\)`, etc) to represent these numbers
 
 <ul class="small">
-<li>How much space does our queue take to store `\(n\)` records?</li>
-<li>If our queue contains `\(n\)` records, how long does it take to do `\(m\)` dequeues?</li>
+<li>How much space does our DS take to store `\(n\)` records?</li>
+<li>If our DS contains `\(n\)` records, how long does it take to remove `\(m\)` records?</li>
 </ul>
 
 Always ask what `\(n\)` is!
@@ -157,14 +155,14 @@ A constant operation doesn't grow
 
 <p class="small">This is as good as it gets!</p>
 
-Constant operations:
+Constant-time operations:
 
 <ul class="small">
 <li>Math and comparisons on individual values</li>
 <li>Entering or returning from a function</li>
 <li>Hash / array insert and lookup</li>
 <li>Appending an element to an array</li>
-<li>Allocating a block of memory takes constant time</li>
+<li>Allocating a block of memory</li>
 </ul>
 
 @snapend
@@ -221,7 +219,7 @@ Linear operations:
 
 <ul class="small">
 <li>Allocating memory takes linear space</li>
-<li>Looping through an array takes linear time</li>
+<li>Comparing a value with each element in an array takes linear time</li>
 <li>Most array operations (slice, splice, filter, map, reduce, etc) are linear</li>
 </ul>
 
@@ -346,7 +344,7 @@ We **ignore** any coefficients (constant multipliers)
 
 <p class="small">They don't change the shape of the curve, just the angle</p>
 
-`\[ n*log(n) + n + 2n + 1 + 4n^2 \\ \text{turns into} \\ n*log(n) + n + 1 + n^2 \]`
+`\[ 4n^2 + n*log(n) + n + 2n + 1 \\ \text{turns into} \\ n^2 + n*log(n) + n + 1 \]`
 
 ---
 
@@ -379,7 +377,9 @@ Exception: different inputs (`\(m\)` and `\(n\)`) don't dominate each other
 ```js zoom-12
 // n is the length of the list
 const sortedEvens = (list) => {
+
   list = list.sort();
+
 
   return list.filter((el) => el % 2 === 0);
 };
@@ -471,6 +471,8 @@ What is the complexity?
 const countMatches = (list, target) => {
   let count = 0;
 
+
+
   list.forEach((el) => {
     if (el === target) {
       count += 1;
@@ -513,8 +515,12 @@ What is the complexity?
 ```js zoom-12
 const allPairs = (list) => {
   const pairs = [];
+
+
   list.forEach((left) => {
+
     list.forEach((right) => {
+      
       pairs.push([left, right]);
     });
   });

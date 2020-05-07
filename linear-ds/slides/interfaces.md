@@ -52,9 +52,10 @@ I have some resource that does **tasks**
 
 The resource can only do **one task at a time**
 
-Tasks should be done in **first-come-first-served** order
-
-Tasks can be **canceled**
+<ul class="small">
+<li>Tasks should be done in **first-come-first-served** order</li>
+<li>Tasks can be **canceled**</li>
+</ul>
 
 I need a data structure to **keep track of waiting tasks**
 
@@ -122,7 +123,9 @@ Note: remove usually returns the removed element
 
 ---
 
-## Iterating Through Records
+## Iterating
+
+In what order do we get records?
 
 - Insertion order
 - "Natural" order (like alphabetic or numeric)
@@ -130,7 +133,7 @@ Note: remove usually returns the removed element
 - If unordered, does it need to be consistent?
 - Can you modify elements as you iterate?
 
-Note: in this course, iteration means implementing `forEach`
+<p>Note: in this course, iteration means implementing `forEach`</p>
 
 ---
 
@@ -208,7 +211,7 @@ How does the client tell us which record to `cancel`?
 <ul class="small">
 <li>Ticket is **opaque** (client can't read it)</li>
 <li>Could be an integer, an object, etc</li>
-<li>Similar to `.setInterval()` and `.clearInterval()`</li>
+<li>Similar to `setInterval()` and `clearInterval()`</li>
 </ul>
 </div>
 
@@ -222,7 +225,13 @@ Design documents, docstrings, method stubs, etc.
 
 This is also a great time to write tests!
 
-In this class we'll use a combination of docstrings (with JSDoc), method stubs, and tests or test stubs
+In this class we'll use a combination of method stubs, docstrings, and tests or test stubs
+
+---
+
+## Queue Formal Definition
+
+[Find it here]()
 
 ---
 
@@ -247,12 +256,6 @@ Performance guarantees can be part of an interface
 In future weeks we'll often start with a performance requirement as part of our motivating problem
 
 This week we'll hold off until after we've talked about analysis
-
----
-
-## Queue Formal Definition
-
-[Find it here]()
 
 ---
 

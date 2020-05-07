@@ -5,6 +5,6 @@ services:
     volumes:
       - .:/repo:cached
     ports:
-      - "9000:9000"
+      - "9090:9090"
     environment:
-      - PORT=9000
+      - PORT=9090

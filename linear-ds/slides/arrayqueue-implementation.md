@@ -1,8 +1,8 @@
 @snap[midpoint]
 
-# Implementation
+## Implementation
 
-### Array Queues
+### ArrayQueue
 
 @snapend
 
@@ -12,7 +12,7 @@
 
 By the end of this module, students will be able to...
 
-- **Define** the terms implementation, design, amortized
+- **Define** the terms implementation, amortized
 - **List** the important capabilities of JavaScript
 - **Explain** how we'll use an array to implement the queue interface
 
@@ -88,19 +88,9 @@ Turns out JavaScript Arrays already implement the queue interface
 
 <p class="small">That makes this problem not very interesting!</p>
 
-For this module only, pretend that `Array.push`, `Array.pop`, `Array.shift`, `Array.unshift`, and `Array.forEach` don't exist
+For this module only, pretend that `Array.push`, `Array.pop`, `Array.shift`, `Array.unshift`, `Array.splice` and `Array.forEach` don't exist
 
 <p class="small">This is the only time we'll "turn off" language features like this</p>
-
----
-
-## Design
-
-We know what our language can do
-
-We know what our DS needs to do
-
-Now we need a plan for how our DS will use the language to do what it needs to do
 
 ---
 
@@ -123,17 +113,23 @@ Hint: Arrays are used to store ordered lists, and a queue is kind of like a list
 
 ## Array Queue
 
+Queue is a **class** containing an **array**
+
 Store queued elements in an array in insertion order
 
-Enqueue at the end of the array (big indices)
+<ul class="small">
+<li>**Enqueue** at the end of the array (big indices)</li>
+<li>**Dequeue** from the front of the array (small indices)</li>
+<li>We'll need to track the **index** of the first and last records</li>
+</ul>
 
-Dequeue from the front of the array (small indices)
+**Canceled** elements are set to `undefined`
 
-Canceled elements are set to `undefined`
+<p class="small">Cancelation ticket is the index in the array</p>
 
 ---
 
-## TODO: AQ visualization
+## Visualization
 
 ---
 
@@ -141,9 +137,7 @@ Canceled elements are set to `undefined`
 
 [Check it out on GitHub]()
 
-## TODO Link
-
-Comprehension questions on the code?
+There will be a quiz
 
 ---
 

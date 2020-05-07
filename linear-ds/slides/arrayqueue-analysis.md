@@ -1,6 +1,8 @@
 @snap[midpoint]
 
-# ArrayQueue Ananlysis
+# Ananlysis
+
+### ArrayQueue
 
 @snapend
 
@@ -65,7 +67,7 @@ Enqueueing `\(n\)` elements?
 <p class="small">No dequeues or cancels yet</p>
 
 <div class="fragment">
-<p>`\(O(n)\)` time, `\(O(n)\)` space</p>
+<p>`\(O(n)\)` time, `\(O(n)\)` max space, `\(O(n)\)` final space</p>
 <p>This is what we would expect</p>
 </div>
 
@@ -98,28 +100,33 @@ What are the time and space complexities of...
 Enqueueing and then canceling n elements?
 
 <div class="fragment">
-<p>`\(O(n)\)` time (as expected)</p>
-<p>`\(O(n)\)` space (not so good)</p>
+<p>`\(O(n)\)` time (expected)</p>
+<p>`\(O(n)\)` max space (expected)</p>
+<p>`\(O(n)\)` final space (not so good)</p>
 <p class="small">The number of elements in the queue is `\(0\)`, but we use `\(n\)` space!</p>
 </div>
 
-## TODO Picture
+<p class="fragment">Try it out!</p>
 
 ---
 
 ## Terminology
 
-| Term | Meaning                                                            |
-| ---- | ------------------------------------------------------------------ |
-| `\(n\)`  | Number of elements **currently** in the queue                      |
-| `\(c\)`  | Number of elements that have been **canceled**                    |
-| `\(d\)`  | Number of elements that have been **dequeued**                     |
-| `\(h\)`  | Total number of elements we've **ever** enqueued (`\(h\)` for history) |
+| Term    | Meaning                                          |
+| ------- | ------------------------------------------------ |
+| `\(n\)` | Number of elements **currently** in the queue    |
+| `\(c\)` | Number of elements that have been **canceled**   |
+| `\(d\)` | Number of elements that have been **dequeued**   |
+| `\(e\)` | Total number of elements we've **ever** enqueued |
 
 @snap[south-west span-100]
-Invariant: `\(n + c + d = h\)`
+@math
+Invariant: `\(n + c + d = e\)`
+@mathend
 
 <p class="small">An **invariant** is something that's always true about your code</p>
+<br>
+<br>
 @snapend
 
 ---
@@ -130,9 +137,10 @@ What are the time and space complexities of...
 
 Enqueueing and then canceling c elements?
 
-<p>`\(O(c)\)` time (as expected)</p>
-<p>`\(O(c)\)` space (not so good)</p>
-<p class="small">`\(n = 0, \quad c = h\)`</p>
+<p>`\(O(c)\)` time (expected)</p>
+<p>`\(O(c)\)` max space (expected)</p>
+<p>`\(O(c)\)` final space (not so good)</p>
+<p class="small">`\(n = 0, \quad c = e\)`</p>
 
 ---
 
@@ -168,8 +176,6 @@ Same memory leak problem as cancelation
 
 A workflow of `\(d\)` enqueues and dequeues uses `\(d\)` memory to store `\(0\)` objects
 
-## TODO picture
-
 ---
 
 ## Dequeue - Time
@@ -197,9 +203,9 @@ Depends on our workflow - what is the **worst case**?
 
 ## Dequeue Workflow
 
-Enqueue `\(h\)`, then cancel or dequeue everything
+Enqueue `\(e\)`, then cancel or dequeue everything
 
-`\[n = 0,\quad h = c + d\]`
+`\[n = 0,\quad e = c + d\]`
 
 What is the **average** time complexity of a dequeue?
 
@@ -214,7 +220,7 @@ O\left(\frac{c}{d}\right) \quad \text{amortized dequeue cost}
 \]`
 </div>
 
-## TODO picture
+<p class="fragment">Try it out!</p>
 
 ---
 
@@ -226,8 +232,8 @@ What if workflow is 80% dequeue, 20% cancel?
 
 <div class="fragment">
 `\[
-c=0.2h, \quad d=0.8h \\
-\frac{c}{d} = \frac{0.2h}{0.8h} = \frac{0.2}{0.8} = 0.25 \\
+c=0.2e, \quad d=0.8e \\
+\frac{c}{d} = \frac{0.2e}{0.8e} = \frac{0.2}{0.8} = 0.25 \\
 O\left(\frac{c}{d}\right) = O(0.25) = O(1)
 \]`
 </div>
@@ -240,8 +246,8 @@ What if workflow is 99.8% cancel, 0.2% dequeue?
 
 <div class="fragment">
 `\[
-c=0.998h, \quad d=0.002h \\
-\frac{c}{d} = \frac{0.998h}{0.002h} = \frac{0.998}{0.002} = 499 \\
+c=0.998e, \quad d=0.002e \\
+\frac{c}{d} = \frac{0.998e}{0.002e} = \frac{0.998}{0.002} = 499 \\
 O\left(\frac{c}{d}\right) = O(499) = O(1)
 \]`
 </div>
@@ -254,9 +260,9 @@ O\left(\frac{c}{d}\right) = O(499) = O(1)
 
 | Resource | Type       | Complexity | Note                        |
 | -------- | ---------- | ---------- | --------------------------- |
-| Space    | Always     | `\(O(1)\)`     | Doesn't free space          |
-| Time     | Worst-case | `\(O(c)\)`     |                             |
-| Time     | Amortized  | `\(O(1)\)`     | Assumes consistent workflow |
+| Space    | Always     | `\(O(1)\)` | Doesn't free space          |
+| Time     | Worst-case | `\(O(c)\)` |                             |
+| Time     | Amortized  | `\(O(1)\)` | Assumes consistent workflow |
 
 ---
 

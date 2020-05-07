@@ -2,13 +2,11 @@
 # Linear Data Structures
 @snapend
 
-<!-- TODO figure out order -->
-
 ---?include=linear-ds/slides/intro.md
 
----?include=linear-ds/slides/analysis-review.md
-
 ---?include=linear-ds/slides/thinking-about-data-structures.md
+
+---?include=linear-ds/slides/analysis-review.md
 
 ---?include=linear-ds/slides/interfaces.md
 
