@@ -1,4 +1,4 @@
-@snap[midpoint]
+@snap[midpoint span-100]
 
 # Introduction
 
@@ -6,21 +6,15 @@
 
 @snapend
 
----
-
-## Learning Goals
-
-By the end of this module, students will be able to...
-
-- **Define** the terms
+# TODO consider making this a text-only lesson in learn
 
 ---
 
 ## Welcome to Week 2
 
-Review:
-- How we study data structures
-- Bits of linked list
+![](linear-ds/images/tads-study-workflow.png)
+
+Last week we used a doubly-linked list to implement a queue
 
 ---
 
@@ -28,17 +22,14 @@ Review:
 
 Interface: ordered dictionary
 
-Implementation: 
+Implementation phase 1: binary search tree
 
-Phase 1: binary search tree
-
-Phase 2: red-black tree (self-balancing BST)
+Implementation phase 2: red-black tree (self-balancing BST)
 
 ---
 
 ## Additional Review
 
-- Binary search
 - Recursion
 
 ---
