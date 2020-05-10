@@ -12,7 +12,8 @@
 
 By the end of this module, students will be able to...
 
-- **Define** the terms
+- **Define** the terms ordered dictionary and sub-linear
+- **Describe** the ordered dictionary interface
 
 ---
 
@@ -91,7 +92,7 @@ Since operations are mixed, our data structure needs to be pretty good at everyt
 </div>
 
 <div class="fragment">
-<p>Iterate should be **linear** time, constant space</p>
+<p>Iterate should be **linear** time</p>
 </div>
 
 ---

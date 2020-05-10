@@ -12,7 +12,10 @@
 
 By the end of this module, students will be able to...
 
-- **Define** the terms
+- **Define** the terms linear search, binary search, binary search tree, root, parent, child, ancestor, descendant, subtree
+- **Explain** why previously studied data structures aren't sufficient to implement a fast ordered dictionary
+- **Use** binary search to find an element in a sorted array on `\(log(n)\)` time
+- **Describe** the structure of a binary search tree
 
 ---
 
@@ -149,19 +152,19 @@ We will use a slightly different definition of **leaf**
 
 ---
 
-## BST Notes
+## Subtrees
 
-A tree (or subtree) is **balanced** if it has the same number of descendants on its left as on its right
+A subtree consists of a node an all its descendants
 
-<p class="small">As we'll see, balance is key for performance</p>
-
-<div class="fragment">
-<p>Subtrees are important - each subtree is itself a tree</p>
-
-<p class="small">A subtree can have size 1 or even 0</p>
+<p class="small">Every subtree is itself a binary search tree</p>
 
 <p class="small">That means **recursion** will be a useful tool</p>
-</div>
+
+A node's **left subtree** is the subtree **rooted** at the node's **left child**
+
+<p class="small">Its "right subtree" is rooted at its right child</p>
+
+**Question**: can a node's left and right subtrees ever share a node?
 
 ---
 
@@ -169,9 +172,23 @@ A tree (or subtree) is **balanced** if it has the same number of descendants on 
 
 For every node...
 
-All nodes in the node's left child's subtree have a key less than that node's key
+All nodes in the node's left subtree have a key less than that node's key
 
 All nodes in the right subtree have a greater key
+
+@snap[south span-100]
+![](binary-trees/images/bst-transformed.png)
+@snapend
+
+---
+
+## Balance
+
+A tree (or subtree) is **balanced** if it has close to the same number of descendants on its left as on its right
+
+<p class="small">As we'll see, balance is key for performance</p>
+
+We'll give a more rigorous definition of balance later
 
 ---
 
@@ -183,14 +200,36 @@ https://www.cs.usfca.edu/~galles/visualization/BST.html
 
 ## Summary
 
+Previously studied data structures aren't a good fit for the ordered dictionary interface
+
+A **binary search tree** takes the idea behind binary search and turns it into a **linked** data structure
+
+<p class="small">Linked data structures usually support fast random insert and delete</p>
+
+Each node stores a key-value pair, and has links to up to two child nodes, `left` and `right`
+
+For every node, all keys in the left subtree are less than its key, and all keys in the right subtree are greater
+
 ---
 
-## Vocab
+## Vocab 1
 
-| Term | Definition |
-| ---- | ---------- |
-
+| Term               | Definition                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
+| Linear search      | Search by scanning through a list left to right, takes `\(O(n)\)` time for a list of size `\(n\)` |
+| Binary search      | Splitting a list in half repeatedly, takes `\(O(log(n))\)` time for a list of size `\(n\)`        |
+| Tree               | A linked data structure where each node links to two or more child nodes                          |
+| Binary search tree | A tree organized to promote binary search                                                         |
 
 ---
 
-## Review Questions
+## Vocab 2
+
+| Term       | Definition                                             |
+| ---------- | ------------------------------------------------------ |
+| Root       | The top-most node in a tree                            |
+| Parent     | The node directly above a given node                   |
+| Ancestor   | Any node on the path between a given node and the root |
+| Child      | A node directly below a given node                     |
+| Descendant | Any of a node's children, its children's children, etc |
+| Subtree    | A node and all its descendants                         |

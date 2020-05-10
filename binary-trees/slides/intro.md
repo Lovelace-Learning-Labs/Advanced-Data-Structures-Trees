@@ -24,6 +24,25 @@ Review:
 
 ---
 
+## This Week
+
+Interface: ordered dictionary
+
+Implementation: 
+
+Phase 1: binary search tree
+
+Phase 2: red-black tree (self-balancing BST)
+
+---
+
+## Additional Review
+
+- Binary search
+- Recursion
+
+---
+
 ## Summary
 
 ---
