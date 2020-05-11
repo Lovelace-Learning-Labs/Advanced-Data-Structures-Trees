@@ -1,4 +1,4 @@
-@snap[midpoint]
+@snap[midpoint span-100]
 
 # Binary Search Tree
 
@@ -372,11 +372,12 @@ What is the space complexity of `iterate`?
 @math
 `\[ h = \begin{cases} O(log(n)) & \quad \text{for a balanced tree} \\ O(n) & \quad \text{for an unbalanced tree} \end{cases} \]`
 @mathend
+<br>
 @snapend
 
 ---
 
-## Summary
+## Summary - Height
 
 The height `\(h\)` of a tree is the max depth of a non-leaf node
 
@@ -387,9 +388,15 @@ The complexity of most BST operations depends on the height of the tree
 <li>Iteration takes `\(O(h)\)` space due to the stack</li>
 </ul>
 
-The height is usually `\(O(log(n))\)`, but can be as bad as `\(O(n)\)`
+---
 
-<p class="small fragment">In the next section we'll discuss a technique for keeping a BST balanced</p>
+## Summary - Balance
+
+The height is `\(O(log(n))\)` for a balanced tree, but can be as bad as `\(O(n)\)` if the tree is unbalanced
+
+<p class="small">A tree is balanced the depth of every leaf is within a small constant factor, e.g. no leaf is more than twice as deep as any other</p>
+
+In the next module we'll discuss a technique for keeping a BST balanced
 
 ---
 

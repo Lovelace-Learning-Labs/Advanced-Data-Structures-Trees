@@ -1,4 +1,4 @@
-@snap[midpoint]
+@snap[midpoint span-100]
 
 # Binary Search Trees
 
@@ -14,7 +14,7 @@ By the end of this module, students will be able to...
 
 - **Define** the terms linear search, binary search, binary search tree, root, parent, child, ancestor, descendant, subtree
 - **Explain** why previously studied data structures aren't sufficient to implement a fast ordered dictionary
-- **Use** binary search to find an element in a sorted array on `\(log(n)\)` time
+- **Use** binary search to find an element in a sorted array in `\(O(log(n))\)` time
 - **Describe** the structure of a binary search tree
 
 ---
@@ -84,7 +84,7 @@ Records must be **stored in sorted order**
 </ul>
 
 <div class="fragment">
-<p>Maybe we could **store records in nodes**</p>
+<p>Maybe we could **store records in linked nodes**</p>
 <ul class="small">
 <li>Similar to a linked list</li>
 <li>Insert could be an `\(O(log(n))\)` lookup plus an `\(O(1)\)` node add</li>
