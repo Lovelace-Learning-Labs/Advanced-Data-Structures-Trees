@@ -2,6 +2,8 @@
 # Binary Trees
 @snapend
 
+---?include=binary-trees/slides/fixit-in-post.md
+
 ---?include=binary-trees/slides/intro.md
 
 ---?include=binary-trees/slides/ordered-dict-interface.md

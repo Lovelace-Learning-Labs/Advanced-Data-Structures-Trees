@@ -1,4 +1,4 @@
-@snap[midpoint]
+@snap[midpoint span-100]
 
 # Red-Black Trees
 
@@ -10,7 +10,9 @@
 
 By the end of this module, students will be able to...
 
-- **Define** the terms
+- **Define** the terms red-black tree, rebalance, black-depth, rotation, induction
+- **Explain** how, by following a set of rules, red-black trees can keep themselves balanced as they grow
+- **Describe** the algorithm to rebalance a red-black tree after an insert
 
 ---
 
@@ -58,8 +60,7 @@ We'll define rules about how colors interact
 
 1. **BST Property** still holds
 1. The root is always black
-1. "Bogus" nodes count as black
-   - Leaves, the root's parent
+1. Leaves and the root's parent count as black
 1. You can't have 2 red nodes in a row
    - 2 black nodes is OK
    - In other words, if a node is red, both its children must be black
@@ -84,14 +85,12 @@ We can keep the implementations of `lookup` and `forEach`
 
 <ol start="2">
 <li>The root is always black</li>
-<li>"Bogus" nodes count as black
-<ul><li>Leaves, the root's parent</li></ul>
-</li>
+<li>Leaves and the root's parent count as black</li>
 </ol>
 
 This is bookkeeping to simplify the implementation
 
-We'll use a **sentinel** node to represent "bogus" nodes
+We'll use a **sentinel** node to represent empty nodes
 
 ---
 
@@ -168,10 +167,10 @@ Idea: swap a node and one of its children, while maintaining the BST property
 
 ---
 
-## Insert Fixup
+## Insert Rebalance
 
 1. Do a **normal BST insert**, coloring the new node **red**
-1. **Fixup the tree** so that it follows the rules
+1. **Rebalance the tree** so that it follows the rules
 
 We can assume that the **rules held before we started**
 
@@ -183,7 +182,7 @@ We can assume that the **rules held before we started**
 
 ---
 
-## Fixup Induction
+## Rebalance Induction
 
 ![](binary-trees/images/rbt-induction.png)
 
@@ -226,6 +225,7 @@ iteration (set some ancestor of node to red, set it as our new node, continue)
 ---
 
 @snap[northwest span-60 text-left]
+
 ## Nodes
 
 Each iteration, we look at 4 nodes:
@@ -258,6 +258,7 @@ Each iteration, we look at 4 nodes:
 ---
 
 @snap[northwest span-50]
+
 ## 2x2 Cases
 
 Is `parent` the left or right child of `grandparent`?
@@ -293,6 +294,7 @@ check color of uncle
 ---
 
 @snap[northwest span-60]
+
 ## Red Uncle
 
 `parent` and `uncle` are red, `grandparent` is black
@@ -320,6 +322,7 @@ update node
 ---
 
 @snap[northwest span-60]
+
 ## Resolution
 
 <div>
@@ -354,6 +357,7 @@ pseudocode - color root black after the loop
 ---
 
 @snap[northwest span-65]
+
 ## Black Uncle
 
 If `uncle` is black, we can use a rotation to create some wiggle room
@@ -395,7 +399,7 @@ pseudocode - right child + condition
 
 ---
 
-## Fixup Analysis
+## Rebalance Analysis
 
 How long does each iteration take?
 
@@ -411,14 +415,28 @@ How many iterations, in the worst case?
 
 ## Summary
 
+Any tree that follows the RBT rules is a balanced BST
+
+<ul class="small">
+<li>Every node is black or red</li>
+<li>You can't have 2 red nodes in a row</li>
+<li>The black-depth of every leaf is the same</li>
+</ul>
+
+To keep our BST balanced, we rebalance it after every insert so that it follows the rules again
+
+<p class="small">We can use induction to reason about such a process</p>
+
+Since rebalancing runs in `\(O(h)\)` time, adding it to `insert` doesn't affect the time complexity
+
 ---
 
 ## Vocab
 
-| Term | Definition |
-| ---- | ---------- |
-
-
----
-
-## Review Questions
+| Term           | Definition                                                                                        |
+| -------------- | ------------------------------------------------------------------------------------------------- |
+| Red-black tree | A BST that rebalances itself to follow a set of rules after each `insert` to keep itself balanced |
+| Rebalance      | Adjusting the tree so that it follows the rules                                                   |
+| Black-depth    | The number of black nodes between a node and the root                                             |
+| Rotation       | Swapping a node and its parent, while maintaining BST ordering for all children                   |
+| Induction      | A technique for reasoning about iterative processes                                               |
