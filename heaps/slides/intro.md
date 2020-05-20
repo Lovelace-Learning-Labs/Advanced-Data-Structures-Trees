@@ -18,6 +18,8 @@ Interface: **priority queue**
 
 <p class="small">Each record has a priority, records are removed in priority order</p>
 
+<br>
+
 Data structure: **heap**
 
 <p class="small">Binary tree, but not a binary search tree</p>
@@ -28,9 +30,9 @@ Data structure: **heap**
 
 ## Naming
 
-Heaps present a naming collision!
+"Heap" presents a naming collision!
 
-<p class="fragment">A **heap data structure**: binary tree implemented using an array</p>
+<p class="fragment">**Heap data structure**: binary tree implemented using an array</p>
 
 <p class="fragment">The **program heap**: unstructured memory where the JS interpreter stores our objects</p>
 
@@ -59,7 +61,7 @@ Heapsort takes an array of `\(n\)` records...
 
 And, by turning it into a heap...
 
-Sorts it in-place in `\(O(n log(n))\)` time 
+Sorts it in-place in `\(O(n*log(n))\)` time 
 
 ---
 
