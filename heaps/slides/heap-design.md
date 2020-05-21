@@ -154,3 +154,5 @@ Keep the tree **perfectly balanced**
 Maintain the **max-heap property**:
 
 <p class="small">Every node has priority less than or equal to that of its parent</p>
+
+In the next module, we'll show how to implement insert and remove to satisfy these two properties
