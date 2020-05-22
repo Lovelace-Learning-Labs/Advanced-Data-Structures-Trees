@@ -72,7 +72,7 @@ Root goes at index 1
 For a record at index `\(i\)`
 
 <ul class="small">
-<li>Parent is at index `\(\lfloor{ i / 2 } \rfloor \)`</li>
+<li>Parent is at index `\(\left \lfloor{ \frac{i}{2} } \right \rfloor \)`</li>
 <li>Left child is at index `\(2 * i\)`</li>
 <li>Right child is at index `\(2 * i + 1\)`</li>
 </ul>
@@ -89,7 +89,7 @@ Let's consider the node at index 4. What index do its parent and children have?
 
 ![](heaps/images/heap-layout-node-4.png)
 
-- Parent: `\(\lfloor{ i / 2 } \rfloor = 2\)`
+- Parent: `\(\left \lfloor{ \frac{i}{2} } \right \rfloor = 2\)`
 - Left child: `\(2 * i = 8\)`
 - Right child: `\(2 * i + 1 = 9\)`
 
@@ -147,9 +147,11 @@ The BST property is too strict
 
 Store tree nodes as elements in an **array**
 
-<p class="small">Parent is at `\(\lfloor{ i / 2 } \rfloor \)`, children are at `\(2 * i\)` and `\(2 * i + 1\)`</p>
+<p class="small">Parent is at `\(\left \lfloor{ \frac{i}{2} } \right \rfloor \)`, children are at `\(2 * i\)` and `\(2 * i + 1\)`</p>
 
 Keep the tree **perfectly balanced**
+
+<p class="small">Bottom layer fills left-to-right</p>
 
 Maintain the **max-heap property**:
 
