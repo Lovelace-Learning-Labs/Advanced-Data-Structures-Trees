@@ -6,3 +6,5 @@
 ---?include=heaps/slides/heap-design.md
 
 ---?include=heaps/slides/heap-implementation.md
+
+---?include=heaps/slides/heapsort.md
