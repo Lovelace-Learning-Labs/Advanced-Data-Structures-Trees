@@ -26,13 +26,15 @@ Operations: insert, remove max
 
 <p class="small">Both `\(O(log(n))\)` for a p-queue with `\(n\)` records</p>
 
-Has a fixed capacity, no allocation allowed after initialization
+Fixed capacity, no allocation after initialization
 
 ---
 
 ## Inspiration
 
-Consider the data structures we've learned about so far. Can any of them implement the priority queue interface easily?
+Consider the data structures we've learned about so far
+
+Can any of them implement the priority queue interface easily?
 
 If not, what inspiration can we draw from those other data structures?
 

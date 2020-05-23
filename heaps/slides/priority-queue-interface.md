@@ -51,8 +51,8 @@ Records are pairs: element + priority
 Operations:
 
 <ul class="small">
-<li>Insert a process with a given priority</li>
-<li>Remove the highest-priority process from the queue</li>
+<li>Insert a record with a given priority</li>
+<li>Remove the highest-priority record from the queue</li>
 </ul>
 
 Ordered by priority
@@ -61,7 +61,7 @@ We expect **mixed** inserts and removes
 
 Has a **fixed capacity**
 
-<p class="small">Attempting to insert into a full queue results in an error</p>
+<p class="small">Attempting to insert into a full priority queue results in an error</p>
 
 ---
 

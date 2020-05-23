@@ -8,10 +8,6 @@
 
 ---
 
-## Learning Goals
-
----
-
 ## Overview
 
 Interface: **priority queue**
@@ -47,7 +43,7 @@ Heaps are a relatively straightforward data structure
 <p class="small">So this week we'll add in a constraint!</p>
 
 <div class="fragment">
-<p>No allocation on the program heap allowed after initialization</p>
+<p>**No allocation** on the program heap allowed after initialization</p>
 <p class="small">Could come up in operating systems (e.g. process scheduler), embedded systems</p>
 </div>
 
@@ -55,13 +51,23 @@ Heaps are a relatively straightforward data structure
 
 ## Heapsort
 
-We'll finish with an algorithm called **heapsort**
+We'll look at an algorithm called **heapsort**
 
 Heapsort takes an array of `\(n\)` records...
 
 And, by turning it into a heap...
 
 Sorts it in-place in `\(O(n*log(n))\)` time 
+
+---
+
+## Stack and Heap
+
+Call stack and program heap
+
+Last section is an optional deep-dive
+
+Gives context to some of what we're talking about
 
 ---
 
