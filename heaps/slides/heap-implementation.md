@@ -2,7 +2,7 @@
 
 # Heap
 
-### Design
+### Implementation
 
 @snapend
 
@@ -28,7 +28,105 @@ Maintain the **max-heap property**:
 
 <p class="small">Every node has priority less than or equal to that of its parent</p>
 
-In the next module, we'll show how to implement insert and remove to satisfy these two properties
+---
+
+## Insert Strategy
+
+To keep the heap perfectly balanced, insert will always add a slot **at the end of the array**
+
+![](heaps/images/heap-insert-plan.png)
+
+Inserting the new record here might violate the **max-heap property**
+
+---
+
+## Float Up
+
+Our newly inserted record might have a higher priority than its parent
+
+Idea: "float" the record up the tree until we find the right spot
+
+<p class="small">Repeatedly swap with the parent</p>
+
+---
+
+## Float Up
+
+![](heaps/images/heap-float-up.png)
+
+---
+
+## Float Pseudocode
+
+```ruby zoom-12
+def float(i)
+  # Note: i and p are indices (not records)
+  p = parent(i)
+  while inBounds(p) && priority(p) < priority(i)
+    swap(i, p)
+
+    i = p
+    p = parent(i)
+```
+
+---
+
+## Float Induction
+
+**Question:** If the new record is larger than its parent, could it be smaller than its sibling?
+
+![](heaps/images/heap-float-contradiction.png)
+
+<p class="fragment">**No!**</p>
+
+<p class="fragment small">By induction, we can assume that the heap was valid before we started</p>
+
+---
+
+## Remove-Max Strategy
+
+We want to remove the element at the front
+
+<p class="small">The root has the highest priority</p>
+
+We want to remove the slot from the back
+
+<p class="small">This keeps the tree balanced</p>
+
+![](heaps/images/heap-remove-strategy.png)
+
+<p class="small fragment">Idea: swap the root with the last element, reduce the count, then "sink" the new root down until the max-heap property holds</p>
+
+---
+
+## Sink Down
+
+![](heaps/images/heap-sink.png)
+
+---
+
+## Sink Pseudocode
+
+```ruby
+def sink(i)
+  # Note: i, l, r and max are all indices (not records)
+  finished = false
+  until finished
+    l = left(i)
+    r = right(i)
+
+    max = i
+    if inBounds(l) && priority(l) > priority(max)
+      max = l
+    if inBounds(r) && priority(r) > priority(max)
+      max = r
+
+    if max == i
+      finished = true
+    else
+      swap(i, max)
+      i = max
+```
 
 ---
 
