@@ -12,6 +12,9 @@
 
 By the end of this module, students will be able to...
 
+* **Describe** the algorithm to insert a record into a max-heap
+* **Describe** the algorithm to remove the highest-priority record from a max-heap
+
 ---
 
 ## Design Review
@@ -132,6 +135,13 @@ def sink(i)
 
 ## Summary
 
----
+To stay balanced, a heap must always **add and remove slots at the end** of the current storage
 
-## Vocab
+<p class="small">Even if the record to add or remove doesn't go at the end</p>
+
+We described **float** and **sink** subroutines to help us
+
+<ul class="small">
+<li>**Insert:** add the record at the end, then "float" it up to the right spot by repeatedly swapping with its parent</li>
+<li>**Remove-Max:** swap root with the last element, then "sink" the new root down to the right spot by repeatedly swapping with its largest child
+</ul>
