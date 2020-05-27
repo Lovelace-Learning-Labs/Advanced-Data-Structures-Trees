@@ -6,6 +6,8 @@ Here are resources for the course.
 
 Note that comprehension question for video lessons as well as some written curriculum is on the Learn platform which is, unfortunately, private (we have limited licenses).
 
+Note also that module names in Panopto are a big mess. They're in order but they'll definitely skip steps.
+
 ### Week 1 - Linear Data Structures
 
 - [Video Lectures](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=e00f890c-d5c5-4b27-8dcf-abb201757da4)
@@ -19,11 +21,13 @@ Note that comprehension question for video lessons as well as some written curri
 ### Week 3 - Self-Balancing Trees
 
 - [Video Lectures](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=205dadf7-60ef-4cb9-be78-abb800fc197a)
+- [Written curriculum: rotations](https://github.com/Lovelace-Learning-Labs/ads-learn-lms/blob/master/03-red-black-trees/03-rotations.md)
 - [Lab](https://github.com/Lovelace-Learning-Labs/ads-red-black-trees)
 
 ### Week 4 - Heaps
  
 - [Video Lectures](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=29eba1fa-9f77-461f-bfbe-abb901270007)
+- [Written curriculum: memory layout (optional supplement)](https://github.com/Lovelace-Learning-Labs/ads-learn-lms/blob/master/04-heaps/09-stack-heap.md)
 - [Lab](https://github.com/Lovelace-Learning-Labs/ads-heaps)
 
 ### Week 5 - Tries
