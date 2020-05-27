@@ -1,8 +1,6 @@
 @snap[midpoint span-100]
 
-# Heap
-
-### Implementation
+# Heapsort
 
 @snapend
 
@@ -25,9 +23,13 @@ We can use a heap to sort an array of `\(n\)` records in `\(O(n*log(n))\)` time
 
 <p class="small">Basic idea: `\(n\)` inserts at `\(O(log(n))\)` each, then `\(n\)` removes also at `\(O(log(n))\)`</p>
 
+<p class="small">Turns out we can do a little better at building the tree</p>
+
 <p class="small">We could do this with a red-black tree too!</p>
 
 The advantage of heapsort is that it's in-place!
+
+<p class="small">Red-black tree sort would not be in-place</p>
 
 ---
 
@@ -96,9 +98,9 @@ How many swaps to sink the root a subtree of height `\(h\)`?
 
 ## Build Heap Runtime
 
-`\[ \displaystyle\sum_{i=0}^{\left \lfloor{ log(n) } \right \rfloor} \left \lceil{ \frac{n}{2^h} } \right \rceil * O(h) \]`
+`\[ \displaystyle\sum_{h=0}^{\left \lfloor{ log(n) } \right \rfloor} \left \lceil{ \frac{n}{2^h} } \right \rceil * O(h) \]`
 
-`\[ =O\left(n*\displaystyle\sum_{i=0}^{\left \lfloor{ log(n) } \right \rfloor} \frac{h}{2^h} \right) \]`
+`\[ =O\left(n*\displaystyle\sum_{h=0}^{\left \lfloor{ log(n) } \right \rfloor} \frac{h}{2^h} \right) \]`
 
 `\[ =O\left(n*2 \right) \]`
 
