@@ -1,0 +1,8 @@
+# Tries
+
+Outline
+
+
+
+Vocab
+- radix
