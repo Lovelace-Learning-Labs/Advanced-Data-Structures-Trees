@@ -121,7 +121,3 @@ Today we introduced the **ordered dictionary** interface
 | ------------------ | -------------------------------------------------------------------------- |
 | Ordered Dictionary | Interface that supports insert / lookup by key and iterating keys in order |
 | Sub-linear         | Better than linear (grows slower than input)                               |
-
----
-
-## Review Questions

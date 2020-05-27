@@ -410,7 +410,3 @@ In the next module we'll discuss a technique for keeping a BST balanced
 | Height       | Maximum (non-leaf) node depth          |
 | Expected     | Average across all possibilities       |
 | Pathological | Intentionally constructed worst case   |
-
----
-
-## Review Questions
