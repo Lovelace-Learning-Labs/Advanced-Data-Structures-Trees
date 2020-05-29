@@ -36,7 +36,7 @@ Vocab
 - suffix
 - radix
 
-## Design
+## Design + Impl
 
 Other DS
 - Sorted array: slow to construct, still log(n) lookup (we want c)
@@ -57,13 +57,9 @@ How many children per node?
 
 Radix count (r)
 
-Notes:
+Node Structure:
 - Store list of children in a hash
 - Multiple words might have the same code, so we'll need to store a list of words at each node. List might be empty (for an interior node).
-
-## Implementation
-
-Node structure
 
 Insert / lookup / gather
 
