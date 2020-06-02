@@ -107,6 +107,9 @@ Insert gets a little tricky
 ## Qs
 
 - Would it be a good idea to use an array to store a trie (like a heap)? Why or why not?
+- How could you optimize a trie if the code for every word is that word?
+    - We call the mapping from a word to itself the "identity" mapping.
+
 
 ## Additional Reading
 
