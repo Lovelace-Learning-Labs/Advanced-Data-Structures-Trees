@@ -65,6 +65,14 @@ Insert / lookup / gather
 
 ## Analysis
 
+Branching factor - number of radixes r
+
+Height - length of maximum code
+
+Number of nodes
+- n <= r^h
+- log_r(n) <= h
+
 Time - insert code of length c
 - Follow or create one node per radix
 - O(c)

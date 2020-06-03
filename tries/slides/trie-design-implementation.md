@@ -85,6 +85,25 @@ In JavaScript, we can use an object to store children
 
 ---
 
+## Branching Factor
+
+A tree's **branching factor** is the maximum number of children per node
+
+<p class="small">For a BST, the branching factor is 2</p>
+
+<p class="small">For a trie, the branching factor is the number of radixes in the **code alphabet**</p>
+
+What would the branching factor be for the following code alphabets:
+
+<ul class="small">
+<li>Binary</li>
+<li>Decimal numbers</li>
+<li>Lowercase English</li>
+<li>T9 codes</li>
+</ul>
+
+---
+
 @snap[north-west span-65]
 
 ## Links Make Codes
@@ -92,7 +111,7 @@ In JavaScript, we can use an object to store children
 To lookup a code, iterate through its radixes, following a link every time
 
 ```ruby
-def lookup(code)
+def lookupCode(code)
   node = root
   for radix in code
     node = node.children[radix]
@@ -127,9 +146,9 @@ Each node keeps an **array** of matching words
 
 ## Lookup by Prefix
 
-Each prefix corresponds to a sub-trie
+Each prefix corresponds to a subtrie
 
-Follow links to find the sub-trie (similar to lookup)
+Follow links to find the subtrie (similar to lookup)
 
 Iterate through all nodes in the subtree to gather matches (similar to BST.forEach)
 
@@ -170,9 +189,16 @@ def insert(word)
 
 ## Summary
 
-- In a trie, each node has one child for each radix in our code alphabet
-- Each node stores a list of words matching that code
-- To lookup by code, walk down the trie one radix at a time
-    - Lookup by prefix: lookup, then gather all matches in the subtree
-    - Insert: lookup but create missing nodes
+Each node has one child for each radix in our code alphabet
+
+<p class="small">This number is the trie's **branching factor**</p>
+
+Each node stores a list of words matching that code
+
+To lookup by code, walk down the trie one radix at a time
+
+<ul class="small">
+<li>Lookup by prefix: lookup, then gather all matches in the subtree</li>
+<li>Insert: lookup but create missing nodes</li>
+</ul>
 
