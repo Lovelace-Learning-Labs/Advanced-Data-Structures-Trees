@@ -12,6 +12,9 @@
 
 By the end of this module, students will be able to...
 
+* **Name** the terms that affect trie performance
+* **Describe** the time and space complexity of trie operations using big-O notation
+
 ---
 
 @snap[north-west span-60]
@@ -138,8 +141,3 @@ Since `\(k\)` is typically a small constant, we can say a trie takes `\(O(n)\)` 
 
 Key takeaway: trie time complexity is **independent of the number of records**
 
----
-
-## Comp Qs
-
-- What is the height of a trie?

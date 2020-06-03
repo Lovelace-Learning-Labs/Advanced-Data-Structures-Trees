@@ -12,7 +12,6 @@
 
 By the end of this module, students will be able to...
 
-- **Define** the terms radix, string, prefix, suffix
 - **Describe** how a T9 keyboard works
 - **List** the important features of the prefix dictionary interface
 
@@ -76,20 +75,6 @@ What would the T9 codes be for...
 @snap[east span-40]
 ![](tries/images/t9-keyboard.png)
 @snapend
-
----
-
-## Lowercase Codes
-
-Digits are hard to read!
-
-In these lessons, to make things easier to read, we will use `toLowerCase` as our code scheme
-
-- `academy`: `academy`
-- `ACADEMY`: `academy`
-- `AcAdEmY`: `academy`
-
-We will also assume only English letters
 
 ---
 
