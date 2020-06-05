@@ -26,7 +26,7 @@ Key operation: Lookup words by **code prefix**
 
 Goals:
 
-- Fast lookup (`\(O(c + m)\)` time for a code of length `\(c\)` resulting in `\(m\)` matches)
+- Fast lookup - `\(O(c + m)\)` time for a code of length `\(c\)` resulting in `\(m\)` matches
 - Minimal storage space
 
 ---
@@ -82,25 +82,6 @@ Idea: a tree with more than two children per node
 <p class="small">Tries are **sparse**, so from here on we'll only show filled links</p>
 
 In JavaScript, we can use an object to store children
-
----
-
-## Branching Factor
-
-A tree's **branching factor** is the maximum number of children per node
-
-<p class="small">For a BST, the branching factor is 2</p>
-
-<p class="small">For a trie, the branching factor is the number of radixes in the **code alphabet**</p>
-
-What would the branching factor be for the following code alphabets:
-
-<ul class="small">
-<li>Binary</li>
-<li>Decimal numbers</li>
-<li>Lowercase English</li>
-<li>T9 codes</li>
-</ul>
 
 ---
 

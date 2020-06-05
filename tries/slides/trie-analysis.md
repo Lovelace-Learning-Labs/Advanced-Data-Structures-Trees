@@ -12,8 +12,8 @@
 
 By the end of this module, students will be able to...
 
-* **Name** the terms that affect trie performance
-* **Describe** the time and space complexity of trie operations using big-O notation
+- **Name** the terms that affect trie performance
+- **Describe** the time and space complexity of trie operations using big-O notation
 
 ---
 
@@ -45,14 +45,16 @@ What is important for analyzing tries?
 
 | Term         | Meaning                                            |
 | ------------ | -------------------------------------------------- |
-| `\(n\)`      | Number of nodes in the trie                        |
+| `\(n\)`      | Number of words (not nodes) in the trie            |
 | `\(k\)`      | Average length of a code in the trie, typically ~5 |
 | `\(max(k)\)` | Max length of a code in the trie, typically ~20    |
 | `\(c\)`      | Length of the code being inserted or looked up     |
 | `\(m\)`      | Number of words matching a code or prefix          |
 | `\(r\)`      | Number of radixes in code alphabet                 |
 
-We will treat `\(k\)` and `\(max(k)\)` like constants
+<br class="small">
+
+<p>We will treat `\(k\)` and `\(max(k)\)` like constants</p>
 
 ---
 
@@ -67,7 +69,7 @@ def lookupCode(code)
   return node.words
 ```
 
-What is the time complexity of looking up a code of length `\(c\)` in a trie of size `\(n\)`?
+What is the time complexity of looking up a code of length `\(c\)` in a trie containing `\(n\)` words?
 
 <ul class="fragment">
 <li>We inspect at most `\(c\)` nodes</li>
@@ -103,7 +105,7 @@ Walk down a path of length `\(c\)`, creating missing nodes as you go
 
 Insert is `\(O(c)\)` time
 
-Constant space
+Allocates up to `\(O(c)\)` space
 
 <p class="small">Assumes code generation is `\(\leq O(c)\)`</p>
 
@@ -133,11 +135,9 @@ Since `\(k\)` is typically a small constant, we can say a trie takes `\(O(n)\)` 
 | -------------- | -------------- | ---------- |
 | Lookup code    | `\(O(c)\)`     | constant   |
 | Lookup prefix  | `\(O(c + m)\)` | `\(O(m)\)` |
-| Insert one     | `\(O(c)\)`     | constant   |
+| Insert one     | `\(O(c)\)`     | `\(O(c)\)` |
 | Insert `\(n\)` | `\(O(n * c)\)` | `\(O(n)\)` |
 
 <br>
 
-
 Key takeaway: trie time complexity is **independent of the number of records**
-
