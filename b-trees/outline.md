@@ -28,6 +28,7 @@ B-Tree has a "minimum degree" t
 
 Supplement: disk drives and paging
 - [Data structures and secondary storage](http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap19.htm) from CLRS Intro to Algorithms, start up to (not including) 19.1
+- [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
 
 Additional Reading
 - [Intro to disk drives](http://pages.cs.wisc.edu/~remzi/OSTEP/file-disks.pdf), start through 37.3 (can skip "some other details")
