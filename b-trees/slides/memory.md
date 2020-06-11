@@ -153,3 +153,13 @@ These questions will be our focus this week
 ---
 
 ## Summary
+
+**Secondary memory** (disk) is 100x cheaper but 100,000x slower than **main memory** (RAM)
+
+<p class="small">Most computers have way more disk space than RAM</p>
+
+Memory is organized into fixed-size **pages** of a few KB each
+
+<p class="small">To boost performance, secondary memory is always read / written in page</p>
+
+**Swapping** pages of main memory out to disk lets us pretend we have extra memory available.
