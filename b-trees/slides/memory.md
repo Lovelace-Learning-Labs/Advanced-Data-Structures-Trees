@@ -152,6 +152,21 @@ These questions will be our focus this week
 
 ---
 
+## Memory in JavaScript
+
+JavaScript doesn't give us visibility into memory
+
+- How big is main memory?
+- How big is a page?
+- How is memory laid out?
+- What page does this object live on?
+
+If you were implementing a database, you would use a systems language like C, C++ or Rust
+
+These ideas give context to our discussion, but we won't be able to see the mechanics or measure the benefits in JS
+
+---
+
 ## Summary
 
 **Secondary memory** (disk) is 100x cheaper but 100,000x slower than **main memory** (RAM)
@@ -162,4 +177,4 @@ Memory is organized into fixed-size **pages** of a few KB each
 
 <p class="small">To boost performance, secondary memory is always read / written in page</p>
 
-**Swapping** pages of main memory out to disk lets us pretend we have extra memory available.
+**Swapping** pages of main memory out to disk lets us pretend we have extra memory available
