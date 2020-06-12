@@ -111,32 +111,9 @@ This is different than the definition we used for red-black trees!
 
 ## B-Tree Logic
 
-<p class="small">Let `node` be any non-leaf node, then for each index `\(0 \leq i \lt d-1\)`...</p>
-
 <ul class="small">
-<li>All of `node.children[i].keys` are less than `node.keys[i]`</li>
-<li>All of `node.children[i+1].keys` are greater than `node.keys[i]`</li>
-</ul>
-
-<br>
-
-What does this tell us about the relationship between...
-
-`node.keys[i]` and `node.keys[i+1]`
-
-`node.keys[i]` and `node.children[i].children[x].keys`
-
-<p class="small">Where `x` `\(\leq\)` `node.children[i].degree`</p>
-
----
-
-## B-Tree Logic
-
-<p class="small">Let `node` be any non-leaf node, then for each index `\(0 \leq i \lt d-1\)`...</p>
-
-<ul class="small">
-<li>All of `node.children[i].keys` are less than `node.keys[i]`</li>
-<li>All of `node.children[i+1].keys` are greater than `node.keys[i]`</li>
+<li>All keys under `node.children[i] < node.keys[i]`</li>
+<li>All keys under `node.children[i+1] > node.keys[i]`</li>
 </ul>
 
 <br>
@@ -145,12 +122,103 @@ What does this tell us about the relationship between...
 
 <ul class="small">
 <li>`node.keys[i]` and keys to the left or right?</li>
-<li>`node.keys[i]` and keys in children of `node.children[i]`?</li>
-<li>`node.keys[i]` and keys in children of `node.children[i+1]`?</li>
+<li>`node.keys[i]` and keys in `node`'s left or right sibling?</li>
+<li>`node.keys[i]` and keys in children of `node.children[i]` or `node.children[i+1]`?</li>
 </ul>
+
+---
+
+## B-Tree Logic
+
+<ul class="small">
+<li>All keys under `node.children[i] < node.keys[i]`</li>
+<li>All keys under `node.children[i+1] > node.keys[i]`</li>
+</ul>
+
+<br>
+
+We can conclude...
+
+<ul class="small">
+<li>Keys within a node are sorted left to right</li>
+<li>All keys in a node's left sibling come before all keys in that node, and all keys in the right sibling come after</li>
+<li>Keys in grandchildren "follow the pattern"</li>
+</ul>
+
+---
+
+## B-Tree Property
+
+Here is a B-Tree containing integers between 1 and 41
+
+![](b-trees/images/btree-full.png)
+
+<!-- https://www.codeproject.com/Articles/1158559/B-Tree-Another-Implementation-By-Java -->
+
+- What is the minimum degree?
+- Does it follow the B-Tree Property?
 
 ---
 
 ## B-Trees and BSTs
 
-Compare the B-Tree property with the BST property
+Compare the **B-Tree property**
+
+<p class="small">Let `node` be any non-leaf node. Then for each index `\(0 \leq i \lt d-1\)`...</p>
+
+<ul class="small">
+<li>All keys under `node.children[i] < node.keys[i]`</li>
+<li>All keys under `node.children[i+1] > node.keys[i]`</li>
+</ul>
+
+With the **BST property**
+
+<p class="small">For every node...
+<ul class="small">
+<li>All nodes under `node.left` have a key less than that node's key</li>
+<li>All nodes under `node.right` have a greater key</li>
+</ul>
+
+<p class="fragment">A B-Tree with minimum degree `\(t=1\)` is a BST!</p>
+
+---
+
+## Leaf Keys
+
+A leaf has keys and values but no children!
+
+<p class="small">B-Tree property doesn't make sense</p>
+
+Keys in a leaf are sorted from smallest to largest
+
+<p class="small">Does this "follow the pattern"?</p>
+
+---
+
+## Leaf Depths
+
+Every leaf in a B-Tree must have the same depth
+
+<ul class="small">
+<li>What does this tell us about balance?</li>
+<li>What can we conclude about the height `\(h\)` of a B-Tree with `\(n\)` records?</li>
+</ul>
+
+<p class="fragment">`\[h = O(log(n))\]`</p>
+
+<br>
+<p class="fragment">How does this compare to the red-black tree rules?</p>
+
+---
+
+## B-Tree Leaves
+
+Consider the leaves in our B-Tree
+
+![](b-trees/images/btree-full.png)
+
+<!-- https://www.codeproject.com/Articles/1158559/B-Tree-Another-Implementation-By-Java -->
+
+- Are leaf keys in sorted order?
+- Are the leaves all at the same depth?
+

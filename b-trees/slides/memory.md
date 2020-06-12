@@ -1,6 +1,6 @@
 @snap[midpoint span-100]
 
-# An Introduction to Memory
+# Memory Swapping
 
 @snapend
 
