@@ -12,6 +12,10 @@
 
 By the end of this module, students will be able to...
 
+- **Describe** the structure of a B-Tree node
+- **Compare** the B-Tree property to the BST property
+- **State** the height of a B-Tree in terms of the number of records
+
 ---
 
 ## Big Ordered Dictionary
@@ -222,3 +226,23 @@ Consider the leaves in our B-Tree
 - Are leaf keys in sorted order?
 - Are the leaves all at the same depth?
 
+---
+
+## Summary
+
+The **degree** `\(d\)` of a non-leaf node is its number of children
+
+<p class="small">A node with `\(d\)` children stores `\(d-1\)` key-value pairs</p>
+
+A B-Tree has **min degree** `\(t\)` and **max degree** `\(2t\)`
+
+The **B-Tree property** is similar to the BST property
+
+<ul class="small">
+<li>All keys under `node.children[i] < node.keys[i]`</li>
+<li>All keys under `node.children[i+1] > node.keys[i]`</li>
+</ul>
+
+All **leaf nodes** have the same **depth**
+
+<p class="small">For a B-tree with `\(n\)` records, the height `\(h = O(log(n))\)`</p>
