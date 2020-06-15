@@ -228,6 +228,25 @@ Consider the leaves in our B-Tree
 
 ---
 
+## Open Questions
+
+- How to lookup a node?
+- How to insert a node, while ensuring all leaves have the same depth?
+- How to implement both operations while minimizing the number of pages read?
+- How does `\(t\)` affect the height of a tree?
+
+---
+
+## Vocab
+
+Term | Denoted | Definition
+--- | --- |---
+Degree | `\(d\)` | Number of children of a node
+Min degree | `\(t\)` | Minimum number of children for any node other than the root
+Max degree | `\(2t\)` | Maximum number of children, always twice the min degree
+
+---
+
 ## Summary
 
 The **degree** `\(d\)` of a non-leaf node is its number of children

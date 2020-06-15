@@ -9,3 +9,7 @@
 ---?include=b-trees/slides/big-ordered-dictionary-interface.md
 
 ---?include=b-trees/slides/b-tree-design.md
+
+---?include=b-trees/slides/b-tree-tuning.md
+
+---?include=b-trees/slides/b-tree-implementation.md
