@@ -254,3 +254,5 @@ Insert keeps the B-Tree balanced
 | --------- | ----------------- | ---------- | ------------------------- |
 | Lookup    | `\(O(log(n))\)`   | `\(O(t)\)` | `\(O(log(n))\)` (minimal) |
 | Insert    | `\(O(t*log(n))\)` | `\(O(t)\)` | `\(O(log(n))\)` (minimal) |
+
+Iterate (implementation and analysis) is up to you!

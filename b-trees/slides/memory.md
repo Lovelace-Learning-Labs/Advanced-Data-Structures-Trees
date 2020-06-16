@@ -16,7 +16,7 @@ By the end of this module, students will be able to...
 
 ---
 
-## Memory Primer
+## B-Trees and Memory
 
 B-trees are optimized for working with disk drives
 
