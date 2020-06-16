@@ -12,6 +12,9 @@
 
 By the end of this module, students will be able to...
 
+* **Describe** the relationship between a B-Tree's minimum degree `\(t\)` and its height
+* **Calculate** an optimal value of `\(t\)` for a given page size and record structure
+
 ---
 
 ## B-Tree Design
@@ -83,7 +86,7 @@ Assuming `\(d = t\)` for all nodes
 If large values of `\(t\)` correspond to shallow trees, shouldn't we set `\(t\)` to something huge?
 
 @snap[fragment]
-No!
+Nope
 
 @math
 <p>If `\(t > n\)`, our tree becomes an array</p>
@@ -131,12 +134,12 @@ These values are typical for database indexing
 </ul>
 
 `\[
-4096 = 4 + 2t * 8 + (2t-1) * (4 + 8) \\
-= 28t - 8 \\
-t = 146
+4096 \geq 4 + 2t * 8 + (2t-1) * (4 + 8) \\
+\quad\quad \geq 40t - 8 \\
+102.2 \geq t \quad\quad
 \]`
 
-<p class="small">To store one million records, a B-Tree with `\(t=146\)` uses 6,900 nodes and has a max height of 3 (in the worst case)</p>
+<p class="small">To store one million records, a B-Tree with `\(t=102\)` uses 9,800 nodes and has a max height of 3 (in the worst case)</p>
 
 ---
 
@@ -148,3 +151,4 @@ Our goal is to select `\(t\)` to **minimize the number of pages read on a walk f
 
 Idea: select `\(t\)` so that the **max size of a node** (`\(d=2t\)`) is as close to the **size of a page** as possible without going over
 
+<p class="small">Since JavaScript doesn't give us visibility into the size of anything, in this course we'll just make up values for `\(t\)`</p>
