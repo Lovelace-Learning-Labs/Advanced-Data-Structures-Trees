@@ -66,7 +66,7 @@ None of the DS we've studied address disk accesses
 
 `\(t\)` - minimum degree of a tree
 
-<p class="small">The minimum number of children any node (except the root) may have</p>
+<p class="small">The minimum number of children for any node (except the root)</p>
 
 `\(2t\)` - maximum degree of a tree
 
@@ -97,6 +97,16 @@ We still say the node has `\(d-1\)` keys
 <br>
 
 This is different than the definition we used for red-black trees!
+
+---
+
+## B-Tree Diagram
+
+Here is a B-Tree containing integers between 1 and 41
+
+![](b-trees/images/btree-full.png)
+
+What is the minimum degree?
 
 ---
 
@@ -153,14 +163,14 @@ We can conclude...
 
 ## B-Tree Property
 
-Here is a B-Tree containing integers between 1 and 41
+Consider the keys and children in our B-Tree
 
 ![](b-trees/images/btree-full.png)
 
 <!-- https://www.codeproject.com/Articles/1158559/B-Tree-Another-Implementation-By-Java -->
 
-- What is the minimum degree?
-- Does it follow the B-Tree Property?
+
+Does it follow the B-Tree Property?
 
 ---
 
@@ -225,25 +235,6 @@ Consider the leaves in our B-Tree
 
 - Are leaf keys in sorted order?
 - Are the leaves all at the same depth?
-
----
-
-## Open Questions
-
-- How to lookup a node?
-- How to insert a node, while ensuring all leaves have the same depth?
-- How to implement both operations while minimizing the number of pages read?
-- How does `\(t\)` affect the height of a tree?
-
----
-
-## Vocab
-
-Term | Denoted | Definition
---- | --- |---
-Degree | `\(d\)` | Number of children of a node
-Min degree | `\(t\)` | Minimum number of children for any node other than the root
-Max degree | `\(2t\)` | Maximum number of children, always twice the min degree
 
 ---
 

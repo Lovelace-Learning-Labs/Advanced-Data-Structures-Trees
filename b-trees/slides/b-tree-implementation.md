@@ -12,9 +12,9 @@
 
 By the end of this module, students will be able to...
 
-* **Implement** the B-Tree loopup and insert algorithms
+* **Implement** the B-Tree lookup and insert algorithms
 * **State** the runtime of those algorithms using big-O notation
-* **Describe** how the insert algorithms keeps a B-Tree balanced
+* **Describe** how the insert algorithm keeps a B-Tree balanced
 
 ---
 
@@ -42,6 +42,20 @@ All **leaf nodes** have the same **depth**
 ## B-Tree Design
 
 ![](b-trees/images/btree-full.png)
+
+---
+
+## B-Tree Tuning
+
+The minimum degree `\(t\)` has a big impact on its structure
+
+- Large `\(t\)` `->` more records per node `->` fewer nodes
+- Large `\(t\)` `->` more children per node `->` shorter tree
+- If `\(t\)` is too big our tree starts to act like an array
+
+Idea: select `\(t\)` so that the **max size of a node** (`\(d=2t\)`) is as close to the **size of a page** as possible without going over
+
+<p class="small">Typical values of `\(t\)` are between 10 and 100</p>
 
 ---
 
@@ -216,7 +230,7 @@ Space is `\(O(t)\)`
 
 Because we split nodes preemptively, our algorithm avoids backtracking
 
-The number of disk reads is the number of nodes visited, is the height of the tree
+The number of disk reads is the number of nodes visited, is linear in the height of the tree
 
 Similar to lookup
 

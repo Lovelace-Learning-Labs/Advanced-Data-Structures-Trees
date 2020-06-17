@@ -87,7 +87,7 @@ Slow but cheap
 | Category       | Main Memory | Secondary Memory | Difference |
 | -------------- | ----------- | ---------------- | ---------- |
 | Hardware       | RAM chips   | Disk, SSD, tape  |            |
-| $100 buys...   | 32 GB       | 4 TB             | 100x       |
+| $100 buys...  | 32 GB       | 4 TB             | 100x       |
 | Latency        | 100 ns      | 10 ms            | 100,000x   |
 | Persistent     | No          | Yes              |            |
 | Access pattern | Random      | Sequential       |            |
@@ -109,11 +109,11 @@ Disk access is **sequential**
 <li>**Transfer** (read or write the data) is fast (microseconds)</li>
 </ul>
 
-To minimize seek time, we want to read/write big chunks of data, called **pages**
+To minimize seek time, the operating system will always read / write big chunks of data, called **pages**
 
 <p class="small">Pages have a fixed size - 2, 4 or 8 KB is common</p>
 
-Performance is best if you read / write an entire page at a time
+Performance is best if your application reads / writes an entire page at a time
 
 ---
 
@@ -125,7 +125,7 @@ What if our program needs to store a **lot** of data?
 
 <p class="small">e.g. a big database</p>
 
-Idea: use RAM as a **cache** for disk
+Idea: use disk to store pages that aren't in use
 
 <ul class="small">
 <li>Data lives on disk, organized in pages</li>
@@ -137,16 +137,18 @@ This strategy is called **swapping** memory
 
 ---
 
-## Swapping Data Structure
+## Swapping DS
 
 How can we design a data structure to perform well with swapping?
 
 Such a data structure would need to answer many questions:
 
+@snap[small]
 - How do you know in which page your data lives?
 - How do you take advantage of the large size of a page?
 - How do you minimize the number of disk reads per operation?
 - How do you balance processor speed against disk access time?
+@snapend
 
 These questions will be our focus this week
 
@@ -156,14 +158,16 @@ These questions will be our focus this week
 
 JavaScript doesn't give us visibility into memory
 
+@snap[small]
 - How big is main memory?
 - How big is a page?
 - How is memory laid out?
 - What page does this object live on?
+@snapend
 
 If you were implementing a database, you would use a systems language like C, C++ or Rust
 
-These ideas give context to our discussion, but we won't be able to see the mechanics or measure the benefits in JS
+These ideas give context to our discussion, but we won't be able to see the mechanics or benefits in JS
 
 ---
 
@@ -178,3 +182,18 @@ Memory is organized into fixed-size **pages** of a few KB each
 <p class="small">To boost performance, secondary memory is always read / written in page</p>
 
 **Swapping** pages of main memory out to disk lets us pretend we have extra memory available
+
+---
+
+## Vocab
+
+| Term             | Definition                                                              |
+| ---------------- | ----------------------------------------------------------------------- |
+| Main memory      | Powered silicone chips called RAM. Fast but expensive.                  |
+| Secondary memory | SSDs, hard drives and tape, collectively called "disk". Slow but cheap. |
+| Volatile         | Stored data goes away when the computer turns off                       |
+| Sequential       | Access is faster for data that is physically close together             |
+| Seek             | Finding where data is physically located on disk, very slow             |
+| Transfer         | Reading / writing data from disk, medium slow                           |
+| Page             | Minimum amount of data that is read from / written to disk              |
+| Swapping         | Treating secondary storage like an extension of primary storage         |
