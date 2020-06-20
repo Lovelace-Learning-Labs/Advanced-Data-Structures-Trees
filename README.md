@@ -44,15 +44,12 @@ If one of these links is broken, [please let Dan know](mailto:dan@adadev.org)!
 
 ### Week 5 - Tries
 
-Not yet implemented as of 5/26/20
 - [Video Lectures](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=10966c90-6a34-42be-ad43-abc8002e08c2)
 - [Lab](https://github.com/Lovelace-Learning-Labs/ads-tries)
 - [Discussion Questions](https://github.com/Lovelace-Learning-Labs/ads-learn-lms/blob/master/05-tries/10-discussion-questions.md)
 - [Whiteboard Questions](https://github.com/Lovelace-Learning-Labs/ads-learn-lms/blob/master/05-tries/12-whiteboard-questions.md)
 
 ### Week 6 - B-Trees
-
-Not yet implemented as of 5/26/20
 
 - [Video Lectures](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=d5458d4c-5882-4d0b-8d23-abc8002e129a)
 - [Lab](https://github.com/Lovelace-Learning-Labs/ads-b-trees)
