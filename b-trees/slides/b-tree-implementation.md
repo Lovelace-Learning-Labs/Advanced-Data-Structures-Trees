@@ -21,7 +21,7 @@ By the end of this module, students will be able to...
 ## B-Tree Design
 
 The **degree** `\(d\)` of a non-leaf node is its number of children
-
+ ..
 <p class="small">A node with `\(d\)` children stores `\(d-1\)` key-value pairs</p>
 
 A B-Tree has **min degree** `\(t\)` and **max degree** `\(2t\)`
